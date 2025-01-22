@@ -1,6 +1,5 @@
 from typing import Optional
 
-
 BOOKS_DATABASE = [
     {
         "id": 1,
@@ -19,6 +18,7 @@ class Book:
     """
     Класс описывает модель книги
     """
+
     def __init__(self, id_: int, name: str, pages: int):
         """ Инициализация экземпляра класса """
         self.id_ = id_  # идентификатор книги
@@ -38,6 +38,7 @@ class Library:
     """
     Класс описывает модель библиотеки
     """
+
     def __init__(self, books: Optional[list[Book]] = []):
         """ Инициализация экземпляра класса """
         self.books = books  # список книг
@@ -47,8 +48,7 @@ class Library:
         if not self.books:
             return 1
         else:
-            new_id = max(book.id_ for book in self.books) + 1  # идентификатор последней книги
-            return new_id
+            return self.books[-1].id_ + 1  # идентификатор последней книги
 
     def get_index_by_book_id(self, book_id: int) -> int:
         """ Метод возвращает индекс книги в списке, который хранится в атрибуте экземпляра класса """
