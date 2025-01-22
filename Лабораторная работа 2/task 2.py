@@ -1,5 +1,6 @@
 from typing import Optional
 
+
 BOOKS_DATABASE = [
     {
         "id": 1,
@@ -18,7 +19,6 @@ class Book:
     """
     Класс описывает модель книги
     """
-
     def __init__(self, id_: int, name: str, pages: int):
         """ Инициализация экземпляра класса """
         self.id_ = id_  # идентификатор книги
@@ -38,7 +38,6 @@ class Library:
     """
     Класс описывает модель библиотеки
     """
-
     def __init__(self, books: Optional[list[Book]] = []):
         """ Инициализация экземпляра класса """
         self.books = books  # список книг
